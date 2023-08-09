@@ -1,0 +1,24 @@
+impl Counter for Contract {
+    #[storage(read)]
+    fn count() -> u64 {
+        storage.counter
+    }
+
+    #[storage(read, write)]
+    fn increment() {
+        storage.counter = storage.counter + 1;
+    }
+}
+cd counter-contract
+
+forc build
+
+forc-wallet new (برای ایجاد ولت جدید)
+
+forc-wallet import ( ایمپورت والت قدیمی خودتون)
+
+forc-wallet account new
+
+forc deploy --node-url beta-3.fuel.network/graphql --gas-price 1 --random-salt
+
+forc wallet sign --account 0 tx-id 00000000000000000000000000000000000000000000000000000000000000
